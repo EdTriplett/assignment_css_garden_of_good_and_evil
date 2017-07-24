@@ -11,10 +11,16 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 app.get('/', (req, res) => {
-  let options = {};
-  options.alignment = req.cookies.alignment;
-  options.good = req.cookies.good;
-  options.evil = req.cookies.evil;
+  let options = {
+    alignment: 'good',
+    good: true,
+    evil: false
+  };
+  if (req.cookies) {
+    options.alignment = req.cookies.alignment;
+    options.good = req.cookies.good;
+    options.evil = req.cookies.evil;
+  }
   res.render('index', options);
 }) 
 
