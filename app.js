@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
   let options = {
     alignment: 'good',
     good: true,
-    evil: false
+    evil: false,
   };
   if (req.cookies.alignment === "good") {
     options.alignment = "good";
@@ -27,28 +27,21 @@ app.get('/', (req, res) => {
   	options.evil = true;
   }
   options['favorite-food'] = req.cookies['favorite-food'];
+  options["favoriteColor"] = req.cookies.favoriteColor || "white";
+  options.insanity = req.cookies.insanity || 2;
   res.render('index', options);
 }) 
 
 app.listen(3000)
 
 app.post('/', (req, res) => {
-  // if (req.body.alignment === 'good') {
-  // 	res.cookie("alignment", "good");
-  // } else {
-  // 	res.cookie("alignment", "evil");
-  // }
   res.cookie("alignment", req.body.alignment)
   if (req.body['favorite-food']) {
-  res.cookie("favorite-food", req.body['favorite-food'])
+	  res.cookie("favorite-food", req.body['favorite-food'])
   }
+  if (req.body.favoriteColor) {
+  	res.cookie("favoriteColor", req.body.favoriteColor);
+  }
+  res.cookie("insanity", req.body.insanity);
   res.redirect("/");
 })
-
-// app.post("/favorite/:id", (req, res) => {
-//   const id = req.params.id;
-//   const favorites = req.cookies.favorites || [];
-//   res.cookie("favorites", favorites.push(id));
-//   res.redirect("/");
-// });
-
