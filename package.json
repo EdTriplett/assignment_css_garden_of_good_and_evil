@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/Avonyel/assignment_css_garden_of_good_and_evil#readme",
   "dependencies": {
-    "express": "^4.15.3"
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "g": "^2.0.1"
   }
 }
