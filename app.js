@@ -26,6 +26,7 @@ app.get('/', (req, res) => {
   	options.good = false;
   	options.evil = true;
   }
+  options['favorite-food'] = req.cookies['favorite-food'];
   res.render('index', options);
 }) 
 
@@ -38,7 +39,9 @@ app.post('/', (req, res) => {
   // 	res.cookie("alignment", "evil");
   // }
   res.cookie("alignment", req.body.alignment)
-  res.cookie("favorite-food", req.body.favorite-food)
+  if (req.body['favorite-food']) {
+  res.cookie("favorite-food", req.body['favorite-food'])
+  }
   res.redirect("/");
 })
 
