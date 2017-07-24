@@ -4,56 +4,70 @@
 <head>
 	<title>The CSS Garden of Good and Evil</title>
 	<!-- if evil, evil.css... -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
 	<!-- Form -->
-	<form action='/' method='POST'>
-		<label for="alignment">Alignment</label>
-		<input type="radio" name="alignment" value="good">Good
-		<input type="radio" name="alignment" value="evil">Evil
+		<form action='/' method='POST'>
+			<label for="alignment">Alignment</label>
+			<input type="radio" name="alignment" value="good">Good
+			<input type="radio" name="alignment" value="evil">Evil
 
-		<label for="favorite-food">Favorite Food:</label>
-		<input type="text" name="favorite-food">
+			<label for="favorite-food">Favorite Food:</label>
+			<input type="text" name="favorite-food">
 
-		<select>
-			<option>Black</option>
-			<option>White</option>
-		</select>
+			<select>
+				<option>Black</option>
+				<option>White</option>
+			</select>
 
-		<label for="insanity">Insanity Level:</label>
-		<input type="range" min="1" max="2" name="insanity">
-	</form>
+			<label for="insanity">Insanity Level:</label>
+			<input type="range" min="1" max="3" name="insanity">
 
-	<!-- Header -->
-	<header>
-		<h1>Welcome to the CSS Garden of {{alignment}}!</h1>
-	</header>
+			<button>Submit</button>
+		</form>
+	<main class="container">
+		<div class="row">
+			<div class="col-xs-12">
+			<!-- Header -->
+				<header>
+					<h1>Welcome to the CSS Garden of {{alignment}}!</h1>
+				</header>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<!-- Biography -->
+				{{#if good}}
+					{{> bio-good}}
+				{{/if}}
+				{{#if evil}}
+					{{> bio-evil}}
+				{{/if}}
+			</div>
+		</div>
+		<div class="row">
+				<!-- Likes/Dislikes -->
 
-	<!-- Biography -->
-	{{#if good}}
-		{{> bio-good}}
-	{{/if}}
-	{{#if evil}}
-		{{> bio-evil}}
-	{{/if}}
-
-	<!-- Likes/Dislikes -->
-
-	{{#if good}}
-		{{> likes-good}}
-	{{/if}}
-	{{#if evil}}
-		{{> likes-evil}}
-	{{/if}}
-
-	<!-- Resume -->
-		{{#if good}}
-		{{> resume-good}}
-	{{/if}}
-	{{#if evil}}
-		{{> resume-evil}}
-	{{/if}}
-
-
+				{{#if good}}
+					{{> likes-good}}
+				{{/if}}
+				{{#if evil}}
+					{{> likes-evil}}
+				{{/if}}
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<!-- Resume -->
+				{{#if good}}
+					{{> resume-good}}
+				{{/if}}
+				{{#if evil}}
+					{{> resume-evil}}
+				{{/if}}
+			</div>
+		</div>
+	</main>
 </body>
 </html>

@@ -4,6 +4,7 @@ const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 
@@ -16,10 +17,14 @@ app.get('/', (req, res) => {
     good: true,
     evil: false
   };
-  if (req.cookies) {
-    options.alignment = req.cookies.alignment;
-    options.good = req.cookies.good;
-    options.evil = req.cookies.evil;
+  if (req.cookies.alignment === "good") {
+    options.alignment = "good";
+    options.good = true;
+    options.evil = false;
+  } else if (req.cookies.alignment === "evil") {
+  	options.alignment = "evil";
+  	options.good = false;
+  	options.evil = true;
   }
   res.render('index', options);
 }) 
@@ -27,15 +32,13 @@ app.get('/', (req, res) => {
 app.listen(3000)
 
 app.post('/', (req, res) => {
-  if (req.body.alignment === 'good') {
-    res.cookies.alignment = 'good';
-    res.cookies.good = true;
-    res.cookies.evil = false;
-  } else {
-    res.cookies.alignment = 'evil';
-    res.cookies.evil = true;
-    res.cookies.good = false;
-  }
+  // if (req.body.alignment === 'good') {
+  // 	res.cookie("alignment", "good");
+  // } else {
+  // 	res.cookie("alignment", "evil");
+  // }
+  res.cookie("alignment", req.body.alignment)
+  res.cookie("favorite-food", req.body.favorite-food)
   res.redirect("/");
 })
 
