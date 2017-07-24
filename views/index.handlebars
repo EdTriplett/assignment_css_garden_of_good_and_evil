@@ -2,38 +2,48 @@
 
 <html>
 <head>
-	<title>The CSS Garden of Good and Evil</title>
-	<!-- if evil, evil.css... -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<link href="https://fonts.googleapis.com/css?family=Great+Vibes"  rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Ceviche+One" rel="stylesheet">
-	<link href='stylesheets/{{alignment}}Font.css' rel="stylesheet">
-	<link href='stylesheets/{{favoriteColor}}.css' rel="stylesheet">
-	<style>
+<style>
 		body {
 			background-image: url("./images/insanity{{insanity}}.jpg");
 		}
 	</style>
+
+	<title>The CSS Garden of Good and Evil</title>
+	<!-- if evil, evil.css... -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<link href="https://fonts.googleapis.com/css?family=Great+Vibes"  rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css?family=Ceviche+One" rel="stylesheet">
+	
+	<link href='stylesheets/{{alignment}}Font.css' rel="stylesheet">
+	
+	<link href='stylesheets/sliderWidth.css' rel="stylesheet">
+
+	<link href='stylesheets/{{favoriteColor}}.css' rel="stylesheet">
+	
 </head>
 <body>
 	<!-- Form -->
-		<form action='/' method='POST'>
-			<label for="alignment">Alignment</label>
-			<input type="radio" name="alignment" value="good">Good
-			<input type="radio" name="alignment" value="evil">Evil
+		<form action='/' method='POST' class='form-inline'>
+			<label for="alignment" class='form-control'>Alignment</label>
+			<input type="radio" name="alignment" value="good" class='form-control'>Good
+			<input type="radio" name="alignment" value="evil" class='form-control'>Evil
 
-			<label for="favorite-food">Favorite Food:</label>
+			<label for="favorite-food" class='form-control'>Favorite Food:</label>
 			<input type="text" name="favorite-food">
-
-			<select name="favoriteColor">
+			
+			<label for="favoriteColor" class='form-control'>Favorite Color:</label>
+			<select name="favoriteColor" class='form-control'>
 				<option></option>
 				<option>white</option>
 				<option>black</option>
 			</select>
-
-			<label for="insanity">Insanity Level:</label>
-			<input type="range" min="1" max="3" name="insanity">
+			<br>
+			<label for="insanity" class='form-control' >Insanity Level:</label>
+			<input type="range" min="1" max="3" name="insanity" class="slider-width500">
 
 			<button>Submit</button>
 		</form>
