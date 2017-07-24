@@ -1,0 +1,22 @@
+{
+  "name": "assignment_css_garden_of_good_and_evil",
+  "version": "1.0.0",
+  "description": "Working with cookies",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Avonyel/assignment_css_garden_of_good_and_evil.git"
+  },
+  "author": "Ed & Stephanie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Avonyel/assignment_css_garden_of_good_and_evil/issues"
+  },
+  "homepage": "https://github.com/Avonyel/assignment_css_garden_of_good_and_evil#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
