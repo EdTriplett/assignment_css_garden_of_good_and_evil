@@ -3,10 +3,11 @@
 <html>
 <head>
 	<title>The CSS Garden of Good and Evil</title>
+	<!-- if evil, evil.css... -->
 </head>
 <body>
 	<!-- Form -->
-	<form>
+	<form action='/' method='POST'>
 		<label for="alignment">Alignment</label>
 		<input type="radio" name="alignment" value="good">Good
 		<input type="radio" name="alignment" value="evil">Evil
@@ -20,7 +21,7 @@
 		</select>
 
 		<label for="insanity">Insanity Level:</label>
-		<input type="range" min="1" max="5" name="insanity">
+		<input type="range" min="1" max="2" name="insanity">
 	</form>
 
 	<!-- Header -->
@@ -46,6 +47,13 @@
 	{{/if}}
 
 	<!-- Resume -->
+		{{#if good}}
+		{{> resume-good}}
+	{{/if}}
+	{{#if evil}}
+		{{> resume-evil}}
+	{{/if}}
+
 
 </body>
 </html>
