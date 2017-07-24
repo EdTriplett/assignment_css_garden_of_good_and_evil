@@ -36,6 +36,13 @@ app.get('/', (req, res) => {
   	options.insane = false;
   }
 
+  if (options.insanity === "1") {
+    options.boring = true;
+  } else {
+    options.boring = false;
+  }
+
+
   res.render('index', options);
 }) 
 
