@@ -7,8 +7,9 @@
 <body>
 	<!-- Form -->
 	<form>
-		<input type="radio">
-		<input type="radio">
+		<label for="alignment">Alignment</label>
+		<input type="radio" name="alignment" value="good">Good
+		<input type="radio" name="alignment" value="evil">Evil
 
 		<label for="favorite-food">Favorite Food:</label>
 		<input type="text" name="favorite-food">
@@ -24,13 +25,27 @@
 
 	<!-- Header -->
 	<header>
-		<h1></h1>
+		<h1>Welcome to the CSS Garden of {{alignment}}!</h1>
 	</header>
 
 	<!-- Biography -->
+	{{#if good}}
+		{{> bio-good}}
+	{{/if}}
+	{{#if evil}}
+		{{> bio-evil}}
+	{{/if}}
 
 	<!-- Likes/Dislikes -->
 
+	{{#if good}}
+		{{> likes-good}}
+	{{/if}}
+	{{#if evil}}
+		{{> likes-evil}}
+	{{/if}}
+
 	<!-- Resume -->
+
 </body>
 </html>
