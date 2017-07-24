@@ -29,6 +29,13 @@ app.get('/', (req, res) => {
   options['favorite-food'] = req.cookies['favorite-food'];
   options["favoriteColor"] = req.cookies.favoriteColor || "white";
   options.insanity = req.cookies.insanity || 2;
+
+  if (options.insanity === "3") {
+  	options.insane = true;
+  } else {
+  	options.insane = false;
+  }
+
   res.render('index', options);
 }) 
 

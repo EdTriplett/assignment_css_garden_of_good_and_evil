@@ -19,33 +19,42 @@
   <link href="https://fonts.googleapis.com/css?family=Ceviche+One" rel="stylesheet">
 	
 	<link href='stylesheets/{{alignment}}Font.css' rel="stylesheet">
-	
-	<link href='stylesheets/sliderWidth.css' rel="stylesheet">
 
 	<link href='stylesheets/{{favoriteColor}}.css' rel="stylesheet">
-	
+
+	<link href='stylesheets/main.css' rel="stylesheet">
 </head>
 <body>
 	<!-- Form -->
 		<form action='/' method='POST' class='form-inline'>
-			<label for="alignment" class='form-control'>Alignment</label>
-			<input type="radio" name="alignment" value="good" class='form-control'>Good
-			<input type="radio" name="alignment" value="evil" class='form-control'>Evil
+			<div class="form-group">
+				<label for="alignment">Alignment: </label>
+				<input type="radio" name="alignment" value="good" class='form-control'>Good
+				<input type="radio" name="alignment" value="evil" class='form-control'>Evil
+			</div>
 
-			<label for="favorite-food" class='form-control'>Favorite Food:</label>
-			<input type="text" name="favorite-food">
+			<div class="form-group">
+				<label for="favorite-food">Favorite Food:</label>
+				<input type="text" name="favorite-food" class='form-control'>
+			</div>
 			
-			<label for="favoriteColor" class='form-control'>Favorite Color:</label>
-			<select name="favoriteColor" class='form-control'>
-				<option></option>
-				<option>white</option>
-				<option>black</option>
-			</select>
-			<br>
-			<label for="insanity" class='form-control' >Insanity Level:</label>
-			<input type="range" min="1" max="3" name="insanity" class="slider-width500">
+			<div class="form-group">
+				<label for="favoriteColor">Favorite Color:</label>
+				<select name="favoriteColor" class='form-control'>
+					<option></option>
+					<option>white</option>
+					<option>black</option>
+				</select>
+			</div>
 
-			<button>Submit</button>
+			<div class="form-group">
+				<label for="insanity">Insanity Level:</label>
+				<input type="range" min="1" max="3" name="insanity" class='form-control' value="{{insanity}}">
+			</div>
+
+			<div class="form-group">
+				<button class='form-control'>Submit</button>
+			</div>
 		</form>
 	<main class="container">
 		<div class="row">

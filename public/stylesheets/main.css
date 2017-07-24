@@ -1,1 +1,13 @@
-re
+form {
+	background-color: #eee;
+	border-bottom: 2px solid #999;
+}
+
+.form-group {
+	padding-left: 20px;
+}
+
+main {
+	margin-top: 20px;
+	border-radius: 10px;
+}
